@@ -40,7 +40,7 @@ function App() {
           const data = await response.json();
           setState(data)
           // console.log(data)
-        } catch(error) {
+        } catch (error) {
           console.log("Error Fetching States: " + error)
         }
 
@@ -51,9 +51,9 @@ function App() {
 
   // console.log("countries" + countries);
 
-  useEffect(()=>{
-    if(states){
-      const fetchCities = async () =>{
+  useEffect(() => {
+    if (states) {
+      const fetchCities = async () => {
         try {
           const response = await fetch(` https://crio-location-selector.onrender.com/country=${selectedCountry}/state=${selectedState}/cities`)
           const data = await response.json();
@@ -87,10 +87,10 @@ function App() {
       </select>
       <select value={selectedCity} onChange={(e) => setSelectedCity(e.target.value)} disabled={!cities.length}>
         <option value="">Select City</option>
-        {cities.map((city, index)=>(
+        {cities.map((city, index) => (
           <option key={index} value={city}>
             {city}
-            </option>
+          </option>
         ))}
       </select>
 
@@ -100,9 +100,10 @@ function App() {
 
       {selectedCity && (
         <h2>
-          You Selected {selectedCity}, {selectedState}, {selectedCountry}
+          You selected {selectedCity}, {selectedState}, {selectedCountry}
         </h2>
       )}
+
     </div>
   );
 }
