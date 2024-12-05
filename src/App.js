@@ -93,6 +93,16 @@ function App() {
             </option>
         ))}
       </select>
+
+      {/* <h2>
+        You selected {selectedCountry}, {selectedState}, {selectedCity}
+      </h2> */}
+
+      {selectedCity && (
+        <h2>
+          You Selected {selectedCity}, {selectedState}, {selectedCountry}
+        </h2>
+      )}
     </div>
   );
 }
